@@ -1,0 +1,47 @@
+SQL> connect
+Enter user-name: system
+Enter password:
+Connected.
+SQL> create table student(sno number(2),sname varchar2(10),sgroup varchar(10),maths number(2),phy number(2),computer number(2));
+create table student(sno number(2),sname varchar2(10),sgroup varchar(10),maths number(2),phy number(2),computer number(2))
+             *
+ERROR at line 1:
+ORA-00955: name is already used by an existing object
+
+
+SQL> create table students(sno number(2),sname varchar2(10),sgroup varchar(10),maths number(2),phy number(2),computer number(2));
+
+Table created.
+
+SQL> desc students;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ SNO                                                NUMBER(2)
+ SNAME                                              VARCHAR2(10)
+ SGROUP                                             VARCHAR2(10)
+ MATHS                                              NUMBER(2)
+ PHY                                                NUMBER(2)
+ COMPUTER                                           NUMBER(2)
+
+SQL> insert into students values(1,'chaithu','mpcs',90,95,99);
+
+1 row created.
+
+SQL> select * from students;
+
+       SNO SNAME      SGROUP          MATHS        PHY   COMPUTER
+---------- ---------- ---------- ---------- ---------- ----------
+         1 chaithu    mpcs               90         95         99
+
+SQL> insert into students values(2,'jaya','mpcs',96,98,99);
+
+1 row created.
+
+SQL> select * from students;
+
+       SNO SNAME      SGROUP          MATHS        PHY   COMPUTER
+---------- ---------- ---------- ---------- ---------- ----------
+         1 chaithu    mpcs               90         95         99
+         2 jaya       mpcs               96         98         99
+
+SQL>
